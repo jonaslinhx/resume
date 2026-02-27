@@ -2,14 +2,20 @@
   async function loadPosts() {
     const postListEl = document.getElementById('post-list');
     const postHeadingEl = document.getElementById('post-heading');
+    const postMetaEl = document.getElementById('post-meta');
     const postContentEl = document.getElementById('post-content');
-    let posts = [];
+    const homeReaderEl = document.querySelector('.home-reader');
+    const backBtnEl = document.getElementById('back-to-list');
 
+    if (!postListEl || !postHeadingEl || !postContentEl) return;
+
+    let posts = [];
     try {
       const indexResponse = await fetch('posts/index.json');
-      if (!indexResponse.ok) throw new Error('Unable to load posts/index.json');
-      const postFiles = await indexResponse.json();
 
+      if (!indexResponse.ok) throw new Error('Unable to load posts/index.json');
+
+      const postFiles = await indexResponse.json();
       posts = await Promise.all(postFiles.map(async function (file) {
         const response = await fetch('posts/' + file);
         if (!response.ok) {
@@ -17,6 +23,7 @@
             file: file,
             title: file,
             date: '',
+            category: 'general',
             summary: 'Unable to load post.',
             tags: '',
             html: '<p>Unable to load this post.</p>'
@@ -29,13 +36,14 @@
           file: file,
           title: parsed.metadata.title || file,
           date: parsed.metadata.date || '',
+          category: parsed.metadata.category || 'general',
           summary: parsed.metadata.summary || '',
           tags: parsed.metadata.tags || '',
           html: window.MarkdownUtils.markdownToHtml(parsed.body)
         };
       }));
     } catch (error) {
-      postListEl.innerHTML = '<p>Writing section is ready, but no posts were found.</p>';
+      postListEl.innerHTML = '<p>Writing section is ready, but posts could not be loaded.</p>';
       return;
     }
 
@@ -51,7 +59,18 @@
 
       if (buttonEl) buttonEl.classList.add('active');
       postHeadingEl.textContent = post.title;
+      postMetaEl.textContent = [post.date, post.category].filter(Boolean).join(' · ');
       postContentEl.innerHTML = post.html;
+
+      if (homeReaderEl) {
+        homeReaderEl.classList.add('reading');
+      }
+    }
+
+    if (backBtnEl && homeReaderEl) {
+      backBtnEl.addEventListener('click', function () {
+        homeReaderEl.classList.remove('reading');
+      });
     }
 
     postListEl.innerHTML = '';
@@ -64,9 +83,12 @@
         btn.type = 'button';
         btn.className = 'post-item';
         btn.innerHTML = [
+          '<div class="post-head">',
+          '<span class="post-category">' + post.category + '</span>',
+          '<span class="post-meta">' + (post.date || 'Undated') + '</span>',
+          '</div>',
           '<div class="post-title">' + post.title + '</div>',
-          '<div class="post-meta">' + (post.date || 'Undated') + '</div>',
-          '<div>' + (post.summary || '') + '</div>',
+          '<div class="post-summary">' + (post.summary || '') + '</div>',
           '<div class="post-tags">' + (post.tags || '') + '</div>'
         ].join('');
 

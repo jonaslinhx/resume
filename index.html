@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jonas Lim Hong Xiang | Resume</title>
-  <meta name="description" content="Jonas Lim Hong Xiang - Resume, projects, writing, and contact." />
+  <title>Jonas Lim Hong Xiang | Writing</title>
+  <meta name="description" content="Jonas Lim Hong Xiang - writing, reflections, and professional profile links." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -19,49 +19,25 @@
       <nav class="topbar" aria-label="Main navigation">
         <span class="brand">Jonas Lim Hong Xiang</span>
         <div class="tabs" role="tablist" aria-label="Sections">
-          <button class="tab-btn active" role="tab" aria-selected="true" data-tab="resume">Resume</button>
+          <button class="tab-btn active" role="tab" aria-selected="true" data-tab="home">Home</button>
           <button class="tab-btn" role="tab" aria-selected="false" data-tab="about">About</button>
-          <button class="tab-btn" role="tab" aria-selected="false" data-tab="writing">Writing</button>
-          <button class="tab-btn" role="tab" aria-selected="false" data-tab="contact">Contact</button>
         </div>
       </nav>
 
-      <section id="resume" class="panel active" role="tabpanel">
-        <div id="resume-root"></div>
-      </section>
+      <section id="home" class="panel active" role="tabpanel">
+        <div id="home-profile-root"></div>
 
-      <section id="about" class="panel" role="tabpanel" aria-hidden="true">
-        <article class="card">
-          <h2>About Me</h2>
-          <p>
-            I enjoy building technology that is practical and useful, and I care about clear communication from idea to delivery.
-            Outside professional work, I value continuous learning, reflection, and sharing what I learn with others.
-          </p>
-          <p>
-            This section can capture your non-professional side: interests, communities, hobbies, and what shapes how you think.
-          </p>
-        </article>
-
-        <article class="card">
-          <h2>Now</h2>
-          <ul>
-            <li>Current focus area: add what you are actively learning or building.</li>
-            <li>Current challenge: add one meaningful technical or personal challenge.</li>
-            <li>Current reading: add one book, article, or topic area.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="writing" class="panel" role="tabpanel" aria-hidden="true">
-        <div class="two-col">
-          <article class="card">
+        <div class="two-col home-reader">
+          <article class="card post-list-panel">
             <h2>Writing</h2>
-            <p>Posts are loaded from markdown files in <code>/posts</code>.</p>
+            <p>Reflections on projects, trends, and lessons learned.</p>
             <div id="post-list" class="post-list" aria-live="polite"></div>
           </article>
 
-          <article class="card">
+          <article class="card article-panel">
+            <button id="back-to-list" class="back-btn" type="button">Back to posts</button>
             <h2 id="post-heading">Select a post</h2>
+            <p id="post-meta" class="post-meta"></p>
             <div id="post-content">
               <p>Choose an article on the left to read it here.</p>
             </div>
@@ -69,15 +45,32 @@
         </div>
       </section>
 
-      <section id="contact" class="panel" role="tabpanel" aria-hidden="true">
+      <section id="about" class="panel" role="tabpanel" aria-hidden="true">
         <article class="card">
-          <h2>Contact</h2>
-          <p>If you want to discuss opportunities, collaboration, or ideas, feel free to reach out.</p>
-          <div class="contact-grid" id="contact-grid"></div>
+          <h2>About Me</h2>
+          <p>
+            I like building useful systems, writing clearly, and continuously learning.
+            Outside of work, I value curiosity, reflection, and connecting ideas from different fields.
+          </p>
+          <p>
+            This space is where I share the non-professional side of myself: interests, motivations,
+            and what shapes how I think.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Now</h2>
+          <ul>
+            <li>Current focus: developing better writing and project storytelling.</li>
+            <li>Current challenge: balancing depth with simplicity in communication.</li>
+            <li>Current interests: technology trends, product thinking, and lifelong learning.</li>
+          </ul>
         </article>
       </section>
 
-      <p class="footer-note">Built as a resume-first personal website on GitHub Pages.</p>
+      <footer class="site-footer">
+        <div id="site-footer-links" class="footer-links"></div>
+      </footer>
     </div>
   </main>
 
