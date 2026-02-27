@@ -1,0 +1,106 @@
+{
+  "name": "Jonas Lim Hong Xiang",
+  "headline": "Digital scholar focused on building practical software, clear communication, and measurable outcomes.",
+  "contacts": {
+    "email": "jonaslimhx@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/jonaslimhx",
+    "github": "https://github.com/jonaslinhx",
+    "resumePdf": "assets/IMDA-SG-Digital-Scholar-Resume-Jonas-Lim-Hong-Xiang.pdf"
+  },
+  "experience": [
+    {
+      "role": "Software Architect",
+      "company": "NockHub",
+      "meta": "Singapore (Part Time) | May 2024 - Present",
+      "bullets": [
+        "Translated business requirements into technical features through direct customer engagement.",
+        "Architected AWS backend in Python and Terraform, and designed 40+ PostgreSQL schemas with 30+ RESTful APIs.",
+        "Designed and deployed full-stack infrastructure using Python (backend), Flutter (frontend), and AWS with Terraform.",
+        "Led a team of engineers across technical planning and code reviews."
+      ]
+    }
+  ],
+  "education": {
+    "master": {
+      "title": "Master of Computer Science, Data Science & AI",
+      "school": "University of Sydney, Australia",
+      "meta": "Aug 2024 - Jun 2026",
+      "award": "IMDA SG Digital Scholar (Infocomm Media Development Authority)"
+    },
+    "bachelor": {
+      "title": "Bachelor of Engineering, Aerospace",
+      "school": "Nanyang Technological University, Singapore",
+      "meta": "Aug 2015 - May 2019",
+      "award": "First Class Honors, Highest Distinction"
+    }
+  },
+  "coursework": [
+    {
+      "code": "COMP5318 Machine Learning",
+      "detail": "Implemented a Vision Transformer from scratch to train an age prediction model."
+    },
+    {
+      "code": "COMP5046 Natural Language Processing",
+      "detail": "Implemented encoder-decoder components and explored LLM prompting."
+    },
+    {
+      "code": "COMP5425 Multimedia Retrieval",
+      "detail": "Built a RAG-based chatbot."
+    },
+    {
+      "code": "COMP5427 Usability Engineering",
+      "detail": "Analyzed, designed, and evaluated an e-book experience."
+    },
+    {
+      "code": "COMP5426 Parallel & Distributed Programming",
+      "detail": "Designed C programs using pthreads, OpenMP, OpenMPI, and CUDA."
+    },
+    {
+      "code": "COMP5216 Mobile Computing",
+      "detail": "Built a food wastage mobile app using TypeScript and React Native."
+    },
+    {
+      "code": "ELEC5514 IoT Wireless Sensing & Network",
+      "detail": "Built a real-time chat function with STM32 MCU and LoRa transceiver."
+    }
+  ],
+  "skills": {
+    "frontend": "React Native, Flutter",
+    "backend": "PyTorch, TensorFlow, PySpark, FastAPI, Docker",
+    "languages": "Python, SQL, Dart, Bash, C, TypeScript, Terraform",
+    "databases": "MySQL, PostgreSQL, Redis, MongoDB, DynamoDB, DocumentDB, RDS",
+    "cloud": "AWS, GCP, Firebase"
+  },
+  "hackathon": "Global Health Systems Hackathon Hub (Building High-Value Health Systems Leveraging AI): Team I Know, Not Know won 2nd place in Sydney and top 20 in the global round.",
+  "projects": [
+    "pyspark data engineering project: PySpark application that aggregates data and publishes to Kafka topics for downstream services.",
+    "producer-consumer-ml-system: Asynchronous instance segmentation microservice implemented with Terraform."
+  ],
+  "certifications": [
+    {
+      "name": "Data Engineering Apache Spark 3",
+      "issuer": "Udemy",
+      "date": "Dec 2023"
+    },
+    {
+      "name": "AWS Certified Solutions Architect - Professional",
+      "issuer": "Amazon Web Services",
+      "date": "Jan 2024"
+    },
+    {
+      "name": "AWS Certified Advanced Networking - Specialty",
+      "issuer": "Amazon Web Services",
+      "date": "Jul 2023"
+    },
+    {
+      "name": "AWS Certified Solutions Architect - Associate",
+      "issuer": "Amazon Web Services",
+      "date": "Aug 2022"
+    },
+    {
+      "name": "Terraform for AWS",
+      "issuer": "Udemy",
+      "date": "Jun 2022"
+    }
+  ]
+}
