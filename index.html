@@ -1,10 +1,715 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Jonas Lim Hong Xiang</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonas Lim Hong Xiang | Resume</title>
+  <meta name="description" content="Jonas Lim Hong Xiang - Resume, projects, writing, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #e5e7eb;
+      --accent: #0f766e;
+      --accent-soft: #ccfbf1;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at 10% 0%, #eef2f7, #f7f8fa 45%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 28px 20px 56px;
+    }
+
+    .shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .tab-btn {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      background: #f3f4f6;
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .panel {
+      display: none;
+      animation: fade-in 220ms ease;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 12px;
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: #fbfbfc;
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    .chip:hover {
+      border-color: #b7c4d4;
+      background: #f4f6f9;
+      text-decoration: none;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .timeline-item {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      margin-top: 14px;
+    }
+
+    .timeline-item:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .timeline-meta {
+      color: #6b7280;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .post-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .post-item {
+      border: 1px solid var(--line);
+      background: #fcfcfd;
+      border-radius: 12px;
+      padding: 14px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      text-align: left;
+    }
+
+    .post-item:hover {
+      border-color: #b7c4d4;
+      transform: translateY(-1px);
+    }
+
+    .post-item.active {
+      border-color: var(--accent);
+      background: #f0fdfa;
+    }
+
+    .post-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .post-meta {
+      font-size: 0.86rem;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .post-tags {
+      font-size: 0.82rem;
+      color: var(--accent);
+    }
+
+    #post-content {
+      min-height: 180px;
+    }
+
+    #post-content h1,
+    #post-content h2,
+    #post-content h3 {
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+    }
+
+    #post-content p,
+    #post-content li {
+      color: var(--muted);
+    }
+
+    #post-content code {
+      background: #f3f4f6;
+      border-radius: 6px;
+      padding: 0.1rem 0.3rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    #post-content pre {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      overflow-x: auto;
+    }
+
+    #post-content blockquote {
+      border-left: 3px solid #9ca3af;
+      margin: 14px 0;
+      padding: 6px 12px;
+      color: #4b5563;
+      background: #f9fafb;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-row {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fcfcfd;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.85rem;
+      padding-top: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        border-radius: 16px;
+        display: block;
+      }
+
+      .brand {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .tabs {
+        justify-content: flex-start;
+      }
+
+      .tab-btn {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello from GitHub Pages 🚀</h1>
-  <p>This is my Resume</p>
+  <main class="page">
+    <div class="shell">
+      <nav class="topbar" aria-label="Main navigation">
+        <span class="brand">Jonas Lim Hong Xiang</span>
+        <div class="tabs" role="tablist" aria-label="Sections">
+          <button class="tab-btn active" role="tab" aria-selected="true" data-tab="resume">Resume</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="about">About</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="writing">Writing</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="contact">Contact</button>
+        </div>
+      </nav>
+
+      <section id="resume" class="panel active" role="tabpanel">
+        <article class="card">
+          <h1>Jonas Lim Hong Xiang</h1>
+          <p class="hero-subtitle">Digital scholar focused on building practical software, clear communication, and measurable outcomes.</p>
+          <div class="quick-links">
+            <a class="chip" href="mailto:jonaslimhx@gmail.com">jonaslimhx@gmail.com</a>
+            <a class="chip" href="https://www.linkedin.com/in/jonaslimhx" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="chip" href="https://github.com/jonaslinhx" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="chip" href="assets/IMDA-SG-Digital-Scholar-Resume-Jonas-Lim-Hong-Xiang.pdf" target="_blank" rel="noopener noreferrer">Download Resume PDF</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">Experience</div>
+          <div class="timeline-item">
+            <h3>Add role title and company</h3>
+            <div class="timeline-meta">Start Month YYYY - End Month YYYY | Location</div>
+            <ul>
+              <li>Impact-focused bullet with concrete outcome, metric, or scope.</li>
+              <li>Technical and collaboration bullet showing ownership and execution.</li>
+              <li>Optional third bullet for strategic or leadership contribution.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h3>Add role title and company</h3>
+            <div class="timeline-meta">Start Month YYYY - End Month YYYY | Location</div>
+            <ul>
+              <li>Impact-focused bullet with concrete outcome, metric, or scope.</li>
+              <li>Technical and collaboration bullet showing ownership and execution.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card two-col">
+          <section>
+            <div class="section-title">Projects</div>
+            <h3>Highlighted Project Name</h3>
+            <p>One short paragraph about the problem solved, your approach, and the result.</p>
+            <ul>
+              <li>Core stack: e.g. JavaScript, Python, SQL, cloud tools.</li>
+              <li>Add a measurable result when available.</li>
+            </ul>
+          </section>
+          <section>
+            <div class="section-title">Skills</div>
+            <ul>
+              <li><strong>Languages:</strong> Add your languages</li>
+              <li><strong>Frameworks:</strong> Add your frameworks</li>
+              <li><strong>Tools:</strong> Git, CI/CD, testing, cloud tooling</li>
+              <li><strong>Strengths:</strong> Product thinking, communication, ownership</li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="card">
+          <div class="section-title">Education & Awards</div>
+          <ul>
+            <li>Add degree, institution, and graduation year.</li>
+            <li>Add key scholarship, award, or recognition.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="about" class="panel" role="tabpanel" aria-hidden="true">
+        <article class="card">
+          <h2>About Me</h2>
+          <p>
+            I enjoy building technology that is practical and useful, and I care about clear communication from idea to delivery.
+            Outside professional work, I value continuous learning, reflection, and sharing what I learn with others.
+          </p>
+          <p>
+            This section can capture your non-professional side: interests, communities, hobbies, and what shapes how you think.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Now</h2>
+          <ul>
+            <li>Current focus area: add what you are actively learning or building.</li>
+            <li>Current challenge: add one meaningful technical or personal challenge.</li>
+            <li>Current reading: add one book, article, or topic area.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="writing" class="panel" role="tabpanel" aria-hidden="true">
+        <div class="two-col">
+          <article class="card">
+            <h2>Writing</h2>
+            <p>Posts are loaded from markdown files in <code>/posts</code>.</p>
+            <div id="post-list" class="post-list" aria-live="polite"></div>
+          </article>
+
+          <article class="card">
+            <h2 id="post-heading">Select a post</h2>
+            <div id="post-content">
+              <p>Choose an article on the left to read it here.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="panel" role="tabpanel" aria-hidden="true">
+        <article class="card">
+          <h2>Contact</h2>
+          <p>If you want to discuss opportunities, collaboration, or ideas, feel free to reach out.</p>
+          <div class="contact-grid">
+            <div class="contact-row">
+              <strong>Email:</strong> <a href="mailto:jonaslimhx@gmail.com">jonaslimhx@gmail.com</a>
+            </div>
+            <div class="contact-row">
+              <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jonaslimhx" target="_blank" rel="noopener noreferrer">linkedin.com/in/jonaslimhx</a>
+            </div>
+            <div class="contact-row">
+              <strong>GitHub:</strong> <a href="https://github.com/jonaslinhx" target="_blank" rel="noopener noreferrer">github.com/jonaslinhx</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <p class="footer-note">Built as a resume-first personal website on GitHub Pages.</p>
+    </div>
+  </main>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.panel');
+
+    function activateTab(tabName) {
+      tabButtons.forEach((btn) => {
+        const active = btn.dataset.tab === tabName;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', String(active));
+      });
+
+      panels.forEach((panel) => {
+        const active = panel.id === tabName;
+        panel.classList.toggle('active', active);
+        panel.setAttribute('aria-hidden', String(!active));
+      });
+
+      if (window.location.hash !== `#${tabName}`) {
+        history.replaceState(null, '', `#${tabName}`);
+      }
+    }
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+    });
+
+    const hashTab = window.location.hash.replace('#', '');
+    if (hashTab && document.getElementById(hashTab)) {
+      activateTab(hashTab);
+    }
+
+    function escapeHtml(str) {
+      return str
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function parseFrontmatter(text) {
+      const frontmatterMatch = text.match(/^---\n([\s\S]*?)\n---\n?/);
+      if (!frontmatterMatch) {
+        return { metadata: {}, body: text };
+      }
+
+      const metadata = {};
+      frontmatterMatch[1].split('\n').forEach((line) => {
+        const sep = line.indexOf(':');
+        if (sep === -1) return;
+        const key = line.slice(0, sep).trim();
+        const rawValue = line.slice(sep + 1).trim();
+        metadata[key] = rawValue;
+      });
+
+      const body = text.slice(frontmatterMatch[0].length);
+      return { metadata, body };
+    }
+
+    function parseInlineMarkdown(text) {
+      return text
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+    }
+
+    function markdownToHtml(markdown) {
+      const escaped = escapeHtml(markdown);
+      const lines = escaped.split('\n');
+      const html = [];
+      let inList = false;
+      let inCodeBlock = false;
+
+      const closeListIfOpen = () => {
+        if (inList) {
+          html.push('</ul>');
+          inList = false;
+        }
+      };
+
+      lines.forEach((line) => {
+        if (line.startsWith('```')) {
+          closeListIfOpen();
+          if (!inCodeBlock) {
+            html.push('<pre><code>');
+            inCodeBlock = true;
+          } else {
+            html.push('</code></pre>');
+            inCodeBlock = false;
+          }
+          return;
+        }
+
+        if (inCodeBlock) {
+          html.push(`${line}\n`);
+          return;
+        }
+
+        if (!line.trim()) {
+          closeListIfOpen();
+          return;
+        }
+
+        if (line.startsWith('### ')) {
+          closeListIfOpen();
+          html.push(`<h3>${parseInlineMarkdown(line.slice(4))}</h3>`);
+          return;
+        }
+
+        if (line.startsWith('## ')) {
+          closeListIfOpen();
+          html.push(`<h2>${parseInlineMarkdown(line.slice(3))}</h2>`);
+          return;
+        }
+
+        if (line.startsWith('# ')) {
+          closeListIfOpen();
+          html.push(`<h1>${parseInlineMarkdown(line.slice(2))}</h1>`);
+          return;
+        }
+
+        if (line.startsWith('- ')) {
+          if (!inList) {
+            html.push('<ul>');
+            inList = true;
+          }
+          html.push(`<li>${parseInlineMarkdown(line.slice(2))}</li>`);
+          return;
+        }
+
+        if (line.startsWith('> ')) {
+          closeListIfOpen();
+          html.push(`<blockquote>${parseInlineMarkdown(line.slice(2))}</blockquote>`);
+          return;
+        }
+
+        closeListIfOpen();
+        html.push(`<p>${parseInlineMarkdown(line)}</p>`);
+      });
+
+      if (inCodeBlock) html.push('</code></pre>');
+      if (inList) html.push('</ul>');
+      return html.join('');
+    }
+
+    async function loadPosts() {
+      const postListEl = document.getElementById('post-list');
+      const postHeadingEl = document.getElementById('post-heading');
+      const postContentEl = document.getElementById('post-content');
+      let posts = [];
+
+      try {
+        const indexResponse = await fetch('posts/index.json');
+        if (!indexResponse.ok) throw new Error('Unable to load posts/index.json');
+        const postFiles = await indexResponse.json();
+
+        posts = await Promise.all(postFiles.map(async (file) => {
+          const response = await fetch(`posts/${file}`);
+          if (!response.ok) {
+            return { file, title: file, date: '', summary: 'Unable to load post.', tags: '', html: '<p>Unable to load this post.</p>' };
+          }
+
+          const raw = await response.text();
+          const { metadata, body } = parseFrontmatter(raw);
+          return {
+            file,
+            title: metadata.title || file,
+            date: metadata.date || '',
+            summary: metadata.summary || '',
+            tags: metadata.tags || '',
+            html: markdownToHtml(body)
+          };
+        }));
+      } catch (error) {
+        postListEl.innerHTML = '<p>Writing section is ready, but no posts were found.</p>';
+        return;
+      }
+
+      if (!posts.length) {
+        postListEl.innerHTML = '<p>No posts yet. Add markdown files in <code>posts/</code>.</p>';
+        return;
+      }
+
+      function renderPost(post, buttonEl) {
+        document.querySelectorAll('.post-item').forEach((item) => item.classList.remove('active'));
+        if (buttonEl) buttonEl.classList.add('active');
+        postHeadingEl.textContent = post.title;
+        postContentEl.innerHTML = post.html;
+      }
+
+      postListEl.innerHTML = '';
+      posts
+        .sort((a, b) => (a.date < b.date ? 1 : -1))
+        .forEach((post, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'post-item';
+          btn.innerHTML = `
+            <div class="post-title">${post.title}</div>
+            <div class="post-meta">${post.date || 'Undated'}</div>
+            <div>${post.summary || ''}</div>
+            <div class="post-tags">${post.tags || ''}</div>
+          `;
+          btn.addEventListener('click', () => renderPost(post, btn));
+          postListEl.appendChild(btn);
+          if (idx === 0) renderPost(post, btn);
+        });
+    }
+
+    loadPosts();
+  </script>
 </body>
 </html>
