@@ -49,11 +49,12 @@
 
   async function loadProfile() {
     try {
-      const response = await fetch('content/resume.json');
+      const response = await fetch('content/site.json');
       if (!response.ok) throw new Error('Unable to load profile content');
-      const data = await response.json();
-      renderHomeProfile(data);
-      renderFooterLinks(data.contacts);
+      const siteConfig = await response.json();
+      const profile = siteConfig.profile || {};
+      renderHomeProfile(profile);
+      renderFooterLinks(profile.contacts);
     } catch (error) {
       const root = document.getElementById('home-profile-root');
       if (root) {

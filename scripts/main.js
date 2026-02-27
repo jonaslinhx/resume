@@ -15,9 +15,6 @@
       panel.setAttribute('aria-hidden', String(!active));
     });
 
-    if (window.location.hash !== '#' + tabName) {
-      history.replaceState(null, '', '#' + tabName);
-    }
   }
 
   tabButtons.forEach((btn) => {
@@ -25,11 +22,6 @@
       activateTab(btn.dataset.tab);
     });
   });
-
-  const hashTab = window.location.hash.replace('#', '');
-  if (hashTab && document.getElementById(hashTab)) {
-    activateTab(hashTab);
-  }
 
   window.SiteTabs = { activateTab };
 })();

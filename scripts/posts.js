@@ -11,11 +11,11 @@
 
     let posts = [];
     try {
-      const indexResponse = await fetch('posts/index.json');
+      const siteResponse = await fetch('content/site.json');
+      if (!siteResponse.ok) throw new Error('Unable to load content/site.json');
+      const siteConfig = await siteResponse.json();
+      const postFiles = Array.isArray(siteConfig.posts) ? siteConfig.posts : [];
 
-      if (!indexResponse.ok) throw new Error('Unable to load posts/index.json');
-
-      const postFiles = await indexResponse.json();
       posts = await Promise.all(postFiles.map(async function (file) {
         const response = await fetch('posts/' + file);
         if (!response.ok) {

@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "name": "Jonas Lim Hong Xiang",
+    "contacts": {
+      "email": "jonaslimhx@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/jonaslimhx",
+      "github": "https://github.com/jonaslinhx",
+      "resumePdf": "assets/IMDA-SG-Digital-Scholar-Resume-Jonas-Lim-Hong-Xiang.pdf"
+    }
+  },
+  "posts": [
+    "2026-01-26-anyhow.md",
+    "2026-02-27-building-my-resume-site.md",
+    "2026-02-27-digital-scholar-journey.md"
+  ]
+}

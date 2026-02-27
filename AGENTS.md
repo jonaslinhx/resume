@@ -21,6 +21,17 @@ This repository hosts Jonas Lim Hong Xiang's writing-first personal website on G
 - GitHub Actions deploys on push to `main` via `.github/workflows/deploy.yml`.
 - Ensure links and asset paths work when served from repository root.
 
+## Pre-Push Checklist
+Before committing and pushing, verify:
+- New/edited post files are in `posts/` and intentionally included.
+- `content/site.json` is updated for:
+  - `posts` entries (if post visibility changed)
+  - `profile.contacts.resumePdf` (if resume file changed)
+- Frontmatter for new posts includes valid `title`, `date`, `category`, and `summary`.
+- Post `date` uses `YYYY-MM-DD` format (display sorting depends on it).
+- No stale references to removed config files (`content/resume.json`, `content/profile.json`, `posts/index.json`).
+- `git status` reflects only intended changes before commit.
+
 ## Safety
 - Avoid deleting user content without explicit request.
 - If uncertain about factual profile details, pause and ask for clarification.
