@@ -102,12 +102,25 @@
   padding: 9px 12px;
   border-radius: 999px;
   font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .chip:hover {
   border-color: #b7c4d4;
   background: #f4f6f9;
   text-decoration: none;
+}
+
+.chip-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+}
+
+.chip-icon svg {
+  display: block;
 }
 
 .section-title {

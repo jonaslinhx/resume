@@ -18,6 +18,34 @@
         "Designed and deployed full-stack infrastructure using Python (backend), Flutter (frontend), and AWS with Terraform.",
         "Led a team of engineers across technical planning and code reviews."
       ]
+    },
+    {
+      "role": "Senior Machine Learning Engineer",
+      "company": "Carro",
+      "meta": "Singapore | Jun 2022 - Jul 2024",
+      "bullets": [
+        "Worked on ML projects spanning predictive pricing, vehicle damage detection, and engine acoustics.",
+        "Built scalable and fault-tolerant ML systems and microservices on GPU clusters, serving >= 12,000 requests/day.",
+        "Evaluated and replaced a production Mask R-CNN model with YOLOv5, reducing inference time from 500ms to 50ms.",
+        "Built data preparation pipelines, feature store, and metadata store which improved training data quality by 50%.",
+        "Collaborated with cross-functional stakeholders across Singapore, Malaysia, Indonesia, and Taiwan to increase ML service user adoption by 40%.",
+        "Optimized AWS network architectures, databases, and model training servers, saving US$120k in 2023.",
+        "Replaced a monolithic web crawler with a distributed system that reduced processing time from 7 days to 9 hours.",
+        "Reimagined the team's ML infrastructure and work processes, saving 75 man-hours/month per person.",
+        "Designed data engineering frameworks and mentored the team on automating data pipelines and best coding practices.",
+        "Refined project repository structures and optimized system designs for production systems."
+      ]
+    },
+    {
+      "role": "Data Scientist",
+      "company": "Micron Technology",
+      "meta": "Singapore | Jun 2019 - May 2022",
+      "bullets": [
+        "Built a defect classification model that saved inspection tool capacity by 10%.",
+        "Optimized SQL queries in model data preparation pipelines, reducing query time by 50%.",
+        "Built a predictive model for product yield and deployed it to on-premises servers, achieving US$11M savings.",
+        "Developed end-to-end ML solutions from problem formulation and model development to productionalization."
+      ]
     }
   ],
   "education": {
