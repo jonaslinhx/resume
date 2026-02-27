@@ -12,10 +12,25 @@ This repository hosts Jonas Lim Hong Xiang's writing-first personal website on G
 - Keep changes mobile-friendly and accessible.
 
 ## Content Rules
-- Writing content is markdown-driven from `posts/*.md` and indexed by `posts/index.json`.
+- Writing content is markdown-driven from `posts/*.md` and indexed by `content/site.json` -> `posts`.
 - Keep post filenames date-prefixed: `YYYY-MM-DD-title.md`.
-- Prefer updating structured content sources (`posts/*.md`, `posts/index.json`, `content/*.json`) over hardcoding content in HTML/JS.
+- Prefer updating structured content sources (`posts/*.md`, `content/site.json`) over hardcoding content in HTML/JS.
 - Keep profile/contact links discoverable during reading (header + footer CTA).
+
+## Post Writing Preferences
+When drafting posts for this project, default to:
+- Friendly, conversational tone with light humor (not overly formal).
+- Narrative paragraph style; avoid excessive bullet lists unless explicitly requested.
+- Clear section flow:
+  - concise intro
+  - personal context/background
+  - core motivation/thesis
+  - short closing with what readers can expect
+- Balanced readability:
+  - concise paragraphs
+  - no dense wall-of-text
+  - practical takeaways over abstract phrasing
+- Preserve the author's voice: reflective, pragmatic, and approachable.
 
 ## Deployment
 - GitHub Actions deploys on push to `main` via `.github/workflows/deploy.yml`.

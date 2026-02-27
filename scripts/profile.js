@@ -17,7 +17,7 @@
     root.innerHTML = [
       '<article class="card">',
       '<h1>' + data.name + '</h1>',
-      '<p class="hero-subtitle">Writing about projects, trends, and lessons with practical takeaways.</p>',
+      '<p class="hero-subtitle">' + (data.tagline || 'Writing about projects, trends, and lessons with practical takeaways.') + '</p>',
       '<div class="quick-links">',
       chipWithIcon('mailto:' + contacts.email, contacts.email, emailIcon),
       chipWithIcon(contacts.linkedin, 'LinkedIn', linkedInIcon, 'target="_blank" rel="noopener noreferrer"'),

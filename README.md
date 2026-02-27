@@ -24,7 +24,7 @@ This project uses one config file:
 - `content/site.json`
 
 It controls:
-- Profile name + links
+- Profile name, tagline, and links
 - Which posts are loaded into the Home feed
 
 ## Repository Layout
@@ -38,7 +38,7 @@ It controls:
   - `main.js`: tab switching
   - `markdown.js`: markdown/frontmatter parsing helpers
   - `posts.js`: post feed loading + in-page article rendering
-  - `resume.js`: profile header + footer CTA links from `content/site.json`
+  - `profile.js`: profile header + footer CTA links from `content/site.json`
 - `posts/`: markdown articles
 - `content/`: site configuration (`site.json`)
 - `assets/`: static files like the downloadable resume PDF

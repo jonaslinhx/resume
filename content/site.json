@@ -6,11 +6,26 @@
       "linkedin": "https://www.linkedin.com/in/jonaslimhx",
       "github": "https://github.com/jonaslinhx",
       "resumePdf": "assets/IMDA-SG-Digital-Scholar-Resume-Jonas-Lim-Hong-Xiang.pdf"
-    }
+    },
+    "tagline": "Writing about projects, trends, and lessons with practical takeaways."
   },
   "posts": [
-    "2026-01-26-anyhow.md",
-    "2026-02-27-building-my-resume-site.md",
-    "2026-02-27-digital-scholar-journey.md"
+    "2026-02-28-motivation-for-this-site.md"
+  ],
+  "tagOptions": [
+    "reflection",
+    "writing",
+    "motivation",
+    "career",
+    "masters",
+    "entrepreneurship",
+    "project-reflection",
+    "trend-thoughts",
+    "learning-notes",
+    "ai",
+    "ml",
+    "data-science",
+    "product",
+    "leadership"
   ]
 }
